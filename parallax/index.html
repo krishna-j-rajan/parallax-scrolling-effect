@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Parallax Scrolling Website | Vanilla Javascript</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">Logo</a>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <section>
+            <img src="stars.png" id="stars">
+            <img src="moon.png" id="moon">
+            <img src="mountains_behind.png" id="mountains_behind">
+            <h2 id="text">Moon Light</h2>
+            <a href="#" id="btn">Explore</a>
+            <img src="mountains_front.png" id="mountains_front">
+        </section>
+        <div class="sec" id="sec">
+            <h2>Parallax Scrolling Effects</h2>
+            <p>The moon is the most noticeable feature in the night sky and it is also the brightest, but it doesn't give off its own light. It is, actually, reflecting the light given off by the sun. Only seven percent of the light from the sun is reflected. Sometimes, the moon appears to change shape, but it is only because the sun is lighting different parts of it. When the moon passes through the earth's shadow and the earth comes right between the sun and the full moon, it's called a lunar eclipse. This is when the moon is dimmed and it turns in to a dark copper color.
+                <br><br>When you look at the moon from earth, it looks soft with light and dark shades of blue and gray. The dark parts of the moon are extensive, flat plains that were first observed by Galileo, an Italian scientist. He was the first person to look at the moon through a telescope in 1609. He, perhaps, thought that the plains were water because he called them "maria," which is a Latin would that means Seas. Today we have discovered that they are actually huge, deep, holes with edges covered by rock and soil. The word "maria" appears to imply that there is water on the moon, but we now know that there is none on its surface.
+                <br><br> Because there is no water on the moon, there can't be any life. Like all planets except earth, the moon has absolutely no known life. There is no water or air and the sky is continually black, but the stars are still visible. At night, the temperature on the surface of the moon becomes colder than any place on the face of the earth, but during the day, the rocks are only a slight bit hotter than that of boiling water. The Moon doesn't have an atmosphere and no fluid water, but now there is evidence that there is ice on the South Pole, which is permanently shaded. There is ice on the North Pole as well.</p>
+        </div>
+        <script>
+            let stars=document.getElementById('stars');
+            let moon=document.getElementById('moon');
+            let mountains_behind=document.getElementById('mountains_behind');
+            let text=document.getElementById('text');
+            let btn=document.getElementById('btn');
+            let mountains_front=document.getElementById('mountains_front');
+            let header=document.querySelector('header')
+            window.addEventListener('scroll',function(){
+                let value=window.scrollY;
+                stars.style.left=value * 0.25 +'px';
+                moon.style.top=value * 1.05 +'px';
+                mountains_behind.style.top=value * 0.5 +'px';
+                mountains_front.style.top=value * 0 +'px';
+                text.style.marginRight=value * 4 +'px';
+                text.style.marginTop=value * 1.5 +'px';
+                btn.style.marginTop=value * 1.5 +'px';
+                header.style.top=value * 0.5 +'px';
+            })
+        </script>
+    </body>
+</html>
